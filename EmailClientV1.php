@@ -16,7 +16,7 @@ class EmailClientV1
     public function send($emailRequests, $basicAuth = [])
     {
         $response = Http::timeout(15)
-            ->withBasicAuth($basicAuth['username'], $basicAuth['password'])
+            ->withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
             ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/email/send', $emailRequests);
         return $response;
     }
