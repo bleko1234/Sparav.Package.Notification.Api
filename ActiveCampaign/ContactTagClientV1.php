@@ -14,7 +14,7 @@ class ContactTagClientV1
     {
         $response = Http::timeout(15)
             ->withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
-            ->post("https://sparavnotificationapiprod.azurewebsites.net/api/v1/activecampaign/contact/contacttag/?contact={$contact}&tag={$tag}");
+            ->post("https://sparavnotificationapiprod.azurewebsites.net/api/v1/activecampaign/contact/contacttag?contact={$contact}&tag={$tag}");
         return $response;
     }
 
