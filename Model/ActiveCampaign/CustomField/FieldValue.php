@@ -7,7 +7,7 @@ namespace Sparav\Notification\Model\ActiveCampaign\CustomField;
 class FieldValue
 {
 
-    public string $contact; //int
+    public string $contact; // can be an email or contact id from active campaign.
     public int $field; //int
     public string $value; //String
 

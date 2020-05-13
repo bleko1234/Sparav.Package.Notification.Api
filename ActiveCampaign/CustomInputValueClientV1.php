@@ -1,21 +1,19 @@
 <?php
 
-
 namespace Sparav\Notification\ActiveCampaign;
-
 
 use Illuminate\Http\Client\Response;
 use Illuminate\Support\Facades\Http;
-use Sparav\Notification\Model\ActiveCampaign\CustomField\FieldValueWrapper;
+use Sparav\Notification\Model\ActiveCampaign\CustomField\FieldValue;
 
 class CustomInputValueClientV1
 {
 
     /**
-     * @param FieldValueWrapper $fieldValueWrapper
+     * @param FieldValue $fieldValueWrapper
      * @return Response
      */
-    public function update(FieldValueWrapper $fieldValueWrapper)
+    public function update(FieldValue $fieldValueWrapper)
     {
         $response = Http::timeout(15)
             ->withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
