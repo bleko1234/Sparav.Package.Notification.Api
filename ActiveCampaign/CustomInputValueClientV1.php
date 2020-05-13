@@ -19,7 +19,7 @@ class CustomInputValueClientV1
     {
         $response = Http::timeout(15)
             ->withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
-            ->get('https://sparavnotificationapiprod.azurewebsites.net/api/v1/activecampaign/customfieldvalue/update',(array) $fieldValueWrapper);
+            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/activecampaign/customfieldvalue/update',(array) $fieldValueWrapper);
         return $response;
     }
 
