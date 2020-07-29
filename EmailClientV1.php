@@ -28,7 +28,7 @@ class EmailClientV1
      */
     public function validate(array $emails) {
         $response = Http::withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
-            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/email/validate', $emails);
+            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/email/validate', ['emails' => $emails]);
         return $response;
     }
 
