@@ -20,4 +20,16 @@ class EmailClientV1
             ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/email/send', $emailRequests);
         return $response;
     }
+
+    /**
+     * Will validate a list of emails to see if they exists.
+     * @param array $emails
+     * @return Response
+     */
+    public function validate(array $emails) {
+        $response = Http::withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
+            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/email/validate', $emails);
+        return $response;
+    }
+
 }
