@@ -5,6 +5,8 @@ namespace Sparav\Notification\ActiveCampaign;
 
 
 use Sparav\Notification\Model\ActiveCampaign\ContactRequest;
+use Illuminate\Support\Facades\Http;
+
 
 class ContactClientV1
 {
