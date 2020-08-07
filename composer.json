@@ -6,6 +6,7 @@
             "Sparav\\Notification\\": ""
         }
     },
+    "version": "1.0.1",
     "name": "sparav/notification",
     "description": "Sparav Notification Api",
     "type": "MIT",
