@@ -15,14 +15,13 @@ class PushNotificationClientV1
 {
 
     /**
-     * @param array $tokens
-     * @param string $message
+     * @param array $pushnotification (array of objects of pushnotification).
      * @return Response
      */
-    public function send(array $tokens, string $message) {
+    public function send(array $pushnotification) {
         $response = Http::timeout(15)
             ->withBasicAuth(env('SPARAV_NOTIFICATION_API_AUTH_USERNAME'), env('SPARAV_NOTIFICATION_API_AUTH_PASSWORD'))
-            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/pushnotification/send', ['message' => $message, 'tokens' => $tokens]);
+            ->post('https://sparavnotificationapiprod.azurewebsites.net/api/v1/pushnotification/send', $pushnotification);
         return $response;
     }
 
