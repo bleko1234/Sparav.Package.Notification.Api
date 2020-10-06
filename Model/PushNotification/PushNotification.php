@@ -11,7 +11,6 @@ namespace Sparav\Notification\Model\PushNotification;
  */
 class PushNotification
 {
-
     /**
      * @OA\Property(schema="Message")
      */
@@ -22,9 +21,9 @@ class PushNotification
      */
     public Message $message;
 
-    public function __construct(string $deviceToken, Message $message)
+    public function __construct(Device $device, Message $message)
     {
-        $this->deviceToken = $deviceToken;
+        $this->device = $device;
         $this->message = $message;
     }
 
