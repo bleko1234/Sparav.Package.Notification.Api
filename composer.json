@@ -6,10 +6,10 @@
             "Sparav\\Notification\\": ""
         }
     },
-    "version": "1.0.4",
+    "version": "1.0.5",
     "name": "sparav/notification",
     "description": "Sparav Notification Api",
-    "type": "project",
+    "type": "library",
     "license": "MIT",
     "minimum-stability": "stable"
 }
